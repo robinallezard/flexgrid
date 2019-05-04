@@ -1,0 +1,26 @@
+{
+  "name": "flexgrid",
+  "version": "1.0.0",
+  "description": "Création d'une grille à partir de flexbox + Sass.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/robinallezard/flexgrid.git"
+  },
+  "author": "rallezard",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/robinallezard/flexgrid/issues"
+  },
+  "homepage": "https://github.com/robinallezard/flexgrid#readme",
+  "devDependencies": {
+    "gulp": "^4.0.1"
+  },
+  "dependencies": {
+    "gulp-clean-css": "^4.2.0",
+    "gulp-sass": "^4.0.2"
+  }
+}
