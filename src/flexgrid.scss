@@ -1,0 +1,44 @@
+$grid-column : 12;
+$grid-gap: 16px;
+$padding-item: $grid-gap/2;
+$ratioItem: 1 / $grid-column;
+$widthItem: $ratioItem * 100%;
+
+html, body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    color: white;
+    background: rgb(245, 245, 245);
+}
+
+.container {
+    max-width: 1000px;
+    margin: auto;
+    box-sizing: border-box;
+    border: 2px solid black;
+    padding: $padding-item;
+}
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    margin:auto -#{$padding-item};
+
+    >div {
+        margin: $padding-item;
+        flex: 1 1 $widthItem;
+        
+        &:first-child {
+            flex-grow: 2;
+        }
+    }
+}
+
+.item {
+    box-sizing: border-box;
+    background:linear-gradient(rgb(233, 96, 96),rgb(221, 101, 101));
+    border-radius: 4px;
+    padding: 1rem;
+    text-align: center;
+}

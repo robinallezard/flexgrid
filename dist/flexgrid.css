@@ -1,0 +1,31 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  color: white;
+  background: whitesmoke; }
+
+.container {
+  max-width: 1000px;
+  margin: auto;
+  box-sizing: border-box;
+  border: 2px solid black;
+  padding: 8px; }
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto -8px; }
+  .grid > div {
+    margin: 8px;
+    flex: 1 1 8.33333%; }
+    .grid > div:first-child {
+      flex-grow: 2; }
+
+.item {
+  box-sizing: border-box;
+  background: linear-gradient(#e96060, #dd6565);
+  border-radius: 4px;
+  padding: 1rem;
+  text-align: center; }
