@@ -4,6 +4,13 @@ $padding-item: $grid-gap/2;
 $ratioItem: 1 / $grid-column;
 $widthItem: $ratioItem * 100%;
 
+$breakpoints : (
+    sm : 576px,
+    md : 768px,
+    lg : 992px,
+    xl : 1200px
+);
+
 html, body {
     margin: 0;
     padding: 0;
@@ -17,28 +24,61 @@ html, body {
     max-width: 1000px;
     margin: auto;
     box-sizing: border-box;
-    border: 2px solid black;
+    background: rgb(255, 217, 217);
     padding: $padding-item;
 }
 .grid {
     display: flex;
     flex-wrap: wrap;
-    margin:auto -#{$padding-item};
+    margin: auto -#{$padding-item};
 
     >div {
         margin: $padding-item;
-        flex: 1 1 $widthItem;
-        
-        &:first-child {
-            flex-grow: 2;
-        }
+        width: 100%;
     }
 }
 
 .item {
     box-sizing: border-box;
-    background:linear-gradient(rgb(233, 96, 96),rgb(221, 101, 101));
+    background-color: rgb(233, 96, 96);
     border-radius: 4px;
     padding: 1rem;
     text-align: center;
 }
+
+
+.debug {
+    height: 300px;
+    background: red;
+    width: #{map-get($breakpoints, sm)};
+}
+
+@function col($num) {
+    @return 100% * $num / $grid-column ;
+  }
+
+// pour chaque column donc de 1 à 12
+
+@for $i from 1 through $grid-column {
+    $width : col($i);
+
+    @each $var, $break in $breakpoints {
+        
+        .col-#{$var}-#{$i} {
+            @media screen and (min-width: $break) {
+                max-width: calc(#{$width} - #{$grid-gap});
+            }
+        }
+    }
+
+    .col-#{$i} {
+        @media screen and (max-width: map-get($breakpoints, sm )){
+            max-width:calc(#{$width} - #{$grid-gap}); 
+        }
+    }
+}
+
+
+//on créé des breakpoints
+
+
